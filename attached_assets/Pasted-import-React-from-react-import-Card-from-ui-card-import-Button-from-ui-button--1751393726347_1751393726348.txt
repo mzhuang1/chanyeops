@@ -1,0 +1,239 @@
+import React from 'react';
+import { Card } from '../ui/card';
+import { Button } from '../ui/button';
+import { Badge } from '../ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
+import { FileText, TrendingUp, Users, Building, Search, Plus } from 'lucide-react';
+
+export function IndustryResearch() {
+  const researchReports = [
+    {
+      title: '2024年新能源汽车产业发展报告',
+      category: '行业报告',
+      status: '已发布',
+      date: '2024-12-15',
+      views: 1250,
+      downloads: 89
+    },
+    {
+      title: '人工智能产业链深度分析',
+      category: '专题研究',
+      status: '审核中',
+      date: '2024-12-20',
+      views: 856,
+      downloads: 45
+    },
+    {
+      title: '生物医药产业投资趋势洞察',
+      category: '投资分析',
+      status: '撰写中',
+      date: '2025-01-05',
+      views: 0,
+      downloads: 0
+    }
+  ];
+
+  const trendData = [
+    { industry: '人工智能', growth: '+45%', trend: '上升' },
+    { industry: '新能源', growth: '+38%', trend: '上升' },
+    { industry: '生物医药', growth: '+25%', trend: '稳定' },
+    { industry: '先进制造', growth: '+18%', trend: '稳定' },
+  ];
+
+  return (
+    <div className="p-6 space-y-6">
+      {/* Header */}
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl text-gray-900">产业研究</h1>
+          <p className="text-gray-600 mt-1">深度分析产业发展趋势和投资机会</p>
+        </div>
+        <div className="flex space-x-3">
+          <Button variant="outline">
+            <Search className="w-4 h-4 mr-2" />
+            搜索报告
+          </Button>
+          <Button className="bg-orange-500 hover:bg-orange-600">
+            <Plus className="w-4 h-4 mr-2" />
+            新建研究
+          </Button>
+        </div>
+      </div>
+
+      {/* Quick Stats */}
+      <div className="grid grid-cols-4 gap-6">
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">研究报告</p>
+              <p className="text-2xl text-gray-900 mt-1">156</p>
+            </div>
+            <FileText className="w-8 h-8 text-blue-500" />
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">本月阅读</p>
+              <p className="text-2xl text-gray-900 mt-1">8.5K</p>
+            </div>
+            <Users className="w-8 h-8 text-green-500" />
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">覆盖产业</p>
+              <p className="text-2xl text-gray-900 mt-1">28</p>
+            </div>
+            <Building className="w-8 h-8 text-orange-500" />
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">增长率</p>
+              <p className="text-2xl text-gray-900 mt-1">+32%</p>
+            </div>
+            <TrendingUp className="w-8 h-8 text-purple-500" />
+          </div>
+        </Card>
+      </div>
+
+      {/* Main Content */}
+      <Tabs defaultValue="reports" className="space-y-6">
+        <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="reports">研究报告</TabsTrigger>
+          <TabsTrigger value="trends">趋势分析</TabsTrigger>
+          <TabsTrigger value="insights">市场洞察</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="reports" className="space-y-6">
+          <div className="grid grid-cols-3 gap-6">
+            <div className="col-span-2">
+              <Card className="p-6">
+                <div className="flex justify-between items-center mb-4">
+                  <h2 className="text-lg text-gray-900">最新报告</h2>
+                  <Button variant="ghost" size="sm">查看全部</Button>
+                </div>
+                <div className="space-y-4">
+                  {researchReports.map((report, index) => (
+                    <div key={index} className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-gray-900">{report.title}</h3>
+                        <Badge variant={
+                          report.status === '已发布' ? 'default' : 
+                          report.status === '审核中' ? 'secondary' : 'outline'
+                        }>
+                          {report.status}
+                        </Badge>
+                      </div>
+                      <div className="flex items-center space-x-4 text-sm text-gray-600">
+                        <span>{report.category}</span>
+                        <span>•</span>
+                        <span>{report.date}</span>
+                        <span>•</span>
+                        <span>{report.views} 浏览</span>
+                        <span>•</span>
+                        <span>{report.downloads} 下载</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            </div>
+
+            <Card className="p-6">
+              <h2 className="text-lg text-gray-900 mb-4">报告分类</h2>
+              <div className="space-y-3">
+                {[
+                  { name: '行业报告', count: 45, color: 'bg-blue-100 text-blue-800' },
+                  { name: '专题研究', count: 38, color: 'bg-green-100 text-green-800' },
+                  { name: '投资分析', count: 28, color: 'bg-orange-100 text-orange-800' },
+                  { name: '政策解读', count: 22, color: 'bg-purple-100 text-purple-800' },
+                  { name: '竞争分析', count: 23, color: 'bg-red-100 text-red-800' },
+                ].map((category, index) => (
+                  <div key={index} className="flex justify-between items-center">
+                    <span className="text-gray-700">{category.name}</span>
+                    <Badge className={category.color}>{category.count}</Badge>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="trends" className="space-y-6">
+          <div className="grid grid-cols-2 gap-6">
+            <Card className="p-6">
+              <h2 className="text-lg text-gray-900 mb-4">产业增长趋势</h2>
+              <div className="space-y-4">
+                {trendData.map((item, index) => (
+                  <div key={index} className="flex items-center justify-between">
+                    <span className="text-gray-700">{item.industry}</span>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-green-600">{item.growth}</span>
+                      <Badge variant="outline">{item.trend}</Badge>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+
+            <Card className="p-6">
+              <h2 className="text-lg text-gray-900 mb-4">热门关键词</h2>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  '人工智能', '新能源汽车', '碳中和', '数字化转型', 
+                  '生物医药', '先进制造', '绿色发展', '产业链'
+                ].map((keyword, index) => (
+                  <Badge key={index} variant="secondary" className="cursor-pointer hover:bg-blue-100">
+                    {keyword}
+                  </Badge>
+                ))}
+              </div>
+            </Card>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="insights" className="space-y-6">
+          <Card className="p-6">
+            <h2 className="text-lg text-gray-900 mb-4">市场洞察</h2>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <h3 className="text-gray-800">投资热点</h3>
+                <div className="space-y-2">
+                  {[
+                    '新能源产业链完善度提升',
+                    '人工智能应用场景拓展',
+                    '生物医药创新药研发',
+                    '智能制造数字化升级'
+                  ].map((insight, index) => (
+                    <div key={index} className="p-3 bg-blue-50 rounded-lg">
+                      <p className="text-sm text-gray-700">{insight}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-gray-800">风险预警</h3>
+                <div className="space-y-2">
+                  {[
+                    '传统制造业转型压力',
+                    '技术人才短缺问题',
+                    '供应链稳定性挑战',
+                    '政策变化不确定性'
+                  ].map((risk, index) => (
+                    <div key={index} className="p-3 bg-orange-50 rounded-lg">
+                      <p className="text-sm text-gray-700">{risk}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产业集群发展潜力评估系统 - 页面预览</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .mockup-frame {
+            transition: transform 0.2s ease-in-out;
+        }
+        .mockup-frame:hover {
+            transform: scale(1.02);
+        }
+        .preview-image {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- 标题 -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">产业集群发展潜力评估系统</h1>
+            <p class="text-xl text-gray-600 mb-6">页面交互流程预览</p>
+            <div class="flex justify-center items-center space-x-4 text-sm text-gray-500">
+                <span>🖥️ 桌面端设计</span>
+                <span>•</span>
+                <span>📱 响应式布局</span>
+                <span>•</span>
+                <span>🎨 Tailwind CSS v4</span>
+            </div>
+        </div>
+
+        <!-- 页面网格 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- 注册页面 -->
+            <div class="mockup-frame bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">用户注册</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">01. 用户注册页面</h3>
+                    <p class="text-gray-600 text-sm mb-4">新用户创建账户，选择角色和所属机构</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">表单验证</span>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">角色选择</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">用户协议</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="01-register-page.html" target="_blank" 
+                           class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md text-sm text-center hover:bg-blue-700 transition-colors">
+                            查看页面
+                        </a>
+                        <button onclick="takeScreenshot('01-register-page.html')" 
+                                class="px-4 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">
+                            📸
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 登录页面 -->
+            <div class="mockup-frame bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="aspect-video bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">用户登录</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">02. 用户登录页面</h3>
+                    <p class="text-gray-600 text-sm mb-4">已注册用户通过邮箱密码登录系统</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">记住密码</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">第三方登录</span>
+                        <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">忘记密码</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="02-login-page.html" target="_blank" 
+                           class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md text-sm text-center hover:bg-blue-700 transition-colors">
+                            查看页面
+                        </a>
+                        <button onclick="takeScreenshot('02-login-page.html')" 
+                                class="px-4 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">
+                            📸
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 首页 -->
+            <div class="mockup-frame bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="aspect-video bg-gradient-to-br from-purple-50 to-pink-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">系统首页</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">03. 系统首页</h3>
+                    <p class="text-gray-600 text-sm mb-4">主要功能入口，AI助手和数据可视化</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">AI助手</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">数据可视化</span>
+                        <span class="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full">标签页</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="03-home-page.html" target="_blank" 
+                           class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md text-sm text-center hover:bg-blue-700 transition-colors">
+                            查看页面
+                        </a>
+                        <button onclick="takeScreenshot('03-home-page.html')" 
+                                class="px-4 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">
+                            📸
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 聊天页面 -->
+            <div class="mockup-frame bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="aspect-video bg-gradient-to-br from-orange-50 to-red-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">智能对话</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">04. 智能对话页面</h3>
+                    <p class="text-gray-600 text-sm mb-4">AI对话分析界面，支持实时对话和模板</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">分屏布局</span>
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">模板选择</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">快速提示</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="04-chat-page.html" target="_blank" 
+                           class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md text-sm text-center hover:bg-blue-700 transition-colors">
+                            查看页面
+                        </a>
+                        <button onclick="takeScreenshot('04-chat-page.html')" 
+                                class="px-4 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">
+                            📸
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模板页面 -->
+            <div class="mockup-frame bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="aspect-video bg-gradient-to-br from-teal-50 to-cyan-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">模板库</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">05. 模板库页面</h3>
+                    <p class="text-gray-600 text-sm mb-4">报告模板浏览选择，支持分类筛选</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full">模板网格</span>
+                        <span class="bg-cyan-100 text-cyan-800 text-xs px-2 py-1 rounded-full">分类筛选</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">搜索功能</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="05-templates-page.html" target="_blank" 
+                           class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md text-sm text-center hover:bg-blue-700 transition-colors">
+                            查看页面
+                        </a>
+                        <button onclick="takeScreenshot('05-templates-page.html')" 
+                                class="px-4 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">
+                            📸
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 搜索页面 -->
+            <div class="mockup-frame bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="aspect-video bg-gradient-to-br from-indigo-50 to-blue-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">智能搜索</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">06. 搜索页面</h3>
+                    <p class="text-gray-600 text-sm mb-4">智能搜索界面，支持多维度筛选</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">智能搜索</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">结果筛选</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">分页显示</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="06-search-page.html" target="_blank" 
+                           class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md text-sm text-center hover:bg-blue-700 transition-colors">
+                            查看页面
+                        </a>
+                        <button onclick="takeScreenshot('06-search-page.html')" 
+                                class="px-4 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">
+                            📸
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 管理页面 -->
+            <div class="mockup-frame bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="aspect-video bg-gradient-to-br from-red-50 to-pink-100 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">系统管理</h3>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">07. 管理页面</h3>
+                    <p class="text-gray-600 text-sm mb-4">管理员专用界面，用户管理和系统监控</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">用户管理</span>
+                        <span class="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded-full">系统监控</span>
+                        <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">权限控制</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="07-admin-page.html" target="_blank" 
+                           class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md text-sm text-center hover:bg-blue-700 transition-colors">
+                            查看页面
+                        </a>
+                        <button onclick="takeScreenshot('07-admin-page.html')" 
+                                class="px-4 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">
+                            📸
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 批量操作 -->
+        <div class="mt-12 bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">批量操作</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <button onclick="openAllPages()" 
+                        class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+                    🌐 打开所有页面
+                </button>
+                <button onclick="downloadScreenshots()" 
+                        class="bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors">
+                    📸 批量截图
+                </button>
+                <button onclick="generateReport()" 
+                        class="bg-purple-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition-colors">
+                    📋 生成报告
+                </button>
+            </div>
+        </div>
+
+        <!-- 技术信息 -->
+        <div class="mt-8 bg-gray-100 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">技术信息</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                <div>
+                    <span class="font-medium text-gray-700">框架:</span>
+                    <span class="text-gray-600">React + TypeScript</span>
+                </div>
+                <div>
+                    <span class="font-medium text-gray-700">样式:</span>
+                    <span class="text-gray-600">Tailwind CSS v4</span>
+                </div>
+                <div>
+                    <span class="font-medium text-gray-700">设计:</span>
+                    <span class="text-gray-600">响应式布局</span>
+                </div>
+                <div>
+                    <span class="font-medium text-gray-700">浏览器:</span>
+                    <span class="text-gray-600">Chrome 90+</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 批量打开所有页面
+        function openAllPages() {
+            const pages = [
+                '01-register-page.html',
+                '02-login-page.html', 
+                '03-home-page.html',
+                '04-chat-page.html',
+                '05-templates-page.html',
+                '06-search-page.html',
+                '07-admin-page.html'
+            ];
+            
+            pages.forEach((page, index) => {
+                setTimeout(() => {
+                    window.open(page, '_blank');
+                }, index * 500); // 间隔500ms打开，避免浏览器阻止
+            });
+        }
+
+        // 单个页面截图提示
+        function takeScreenshot(filename) {
+            alert(`请手动截图页面: ${filename}\n\n步骤:\n1. 点击"查看页面"按钮\n2. 在新标签页中按F12打开开发者工具\n3. 按Ctrl+Shift+P搜索"screenshot"\n4. 选择"Capture full size screenshot"`);
+        }
+
+        // 批量截图提示
+        function downloadScreenshots() {
+            alert(`自动批量截图说明:\n\n1. 确保已安装Node.js\n2. 在项目根目录运行命令:\n   npm install puppeteer --save-dev\n   npm run screenshots\n\n或者运行脚本:\n   ./scripts/take-screenshots.bat (Windows)\n   ./scripts/take-screenshots.sh (Mac/Linux)`);
+        }
+
+        // 生成报告
+        function generateReport() {
+            const report = {
+                title: '产业集群发展潜力评估系统 - 页面设计报告',
+                timestamp: new Date().toISOString(),
+                pages: [
+                    { id: '01', name: '用户注册页面', status: '已完成', features: ['表单验证', '角色选择', '用户协议'] },
+                    { id: '02', name: '用户登录页面', status: '已完成', features: ['记住密码', '第三方登录', '忘记密码'] },
+                    { id: '03', name: '系统首页', status: '已完成', features: ['AI助手', '数据可视化', '标签页'] },
+                    { id: '04', name: '智能对话页面', status: '已完成', features: ['分屏布局', '模板选择', '快速提示'] },
+                    { id: '05', name: '模板库页面', status: '已完成', features: ['模板网格', '分类筛选', '搜索功能'] },
+                    { id: '06', name: '搜索页面', status: '已完成', features: ['智能搜索', '结果筛选', '分页显示'] },
+                    { id: '07', name: '管理页面', status: '已完成', features: ['用户管理', '系统监控', '权限控制'] }
+                ]
+            };
+            
+            const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'design-report.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

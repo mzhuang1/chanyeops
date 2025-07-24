@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 产业集群发展潜力评估系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#ffffff',
+                        foreground: '#2a2a2a',
+                        primary: '#1e88e5',
+                        'primary-foreground': '#ffffff',
+                        muted: '#ececf0',
+                        'muted-foreground': '#717182',
+                        border: 'rgba(0, 0, 0, 0.1)',
+                        'input-background': '#f3f3f5',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-background text-foreground">
+    <!-- 登录页面 -->
+    <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+        <div class="w-full max-w-md">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <!-- Logo和标题 -->
+                <div class="text-center mb-8">
+                    <div class="flex justify-center mb-4">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+                            <svg width="32" height="32" viewBox="0 0 156 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M77.798 154C121.121 154 156 119.346 156 76.298C156 33.25 121.121 0 77.798 0C34.474 0 0 33.25 0 76.298C0 119.346 34.474 154 77.798 154Z" fill="#1E88E5"/>
+                                <path d="M49.8 54.5C53.5 49.7 58.3 46.1 64.3 43.7C70.2 41.3 76.6 40.1 83.3 40.1C90 40.1 96.4 41.3 102.3 43.7C108.3 46.1 113.1 49.7 116.8 54.5L105.2 63.5C103 60.6 100.2 58.4 96.8 56.9C93.4 55.3 89.6 54.6 85.4 54.6C81.2 54.6 77.4 55.3 74 56.9C70.6 58.4 67.8 60.6 65.6 63.5L49.8 54.5Z" fill="white"/>
+                                <path d="M40.8 102.3C37.1 97.5 35.3 91.7 35.3 85.1C35.3 78.5 37.1 72.8 40.8 67.9C44.5 63 49.4 59.3 55.3 56.9C61.3 54.5 67.8 53.3 74.8 53.3C81.8 53.3 88.3 54.5 94.3 56.9C100.2 59.3 105.1 63 108.8 67.9C112.5 72.8 114.3 78.5 114.3 85.1C114.3 91.7 112.5 97.5 108.8 102.3C105.1 107.2 100.2 110.9 94.3 113.3C88.3 115.7 81.8 116.9 74.8 116.9C67.8 116.9 61.3 115.7 55.3 113.3C49.4 110.9 44.5 107.2 40.8 102.3ZM93.9 94C96.1 91.2 97.2 88 97.2 84.3C97.2 80.6 96.1 77.3 93.9 74.6C91.7 71.8 88.9 69.8 85.5 68.6C82.1 67.3 78.5 66.7 74.8 66.7C71.1 66.7 67.5 67.3 64.1 68.6C60.7 69.8 57.9 71.8 55.7 74.6C53.5 77.3 52.4 80.6 52.4 84.3C52.4 88 53.5 91.2 55.7 94C57.9 96.7 60.7 98.7 64.1 100C67.5 101.2 71.1 101.8 74.8 101.8C78.5 101.8 82.1 101.2 85.5 100C88.9 98.7 91.7 96.7 93.9 94Z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h1 class="text-2xl font-semibold text-gray-900 mb-2">登录系统</h1>
+                    <p class="text-muted-foreground">产业集群发展潜力评估系统</p>
+                </div>
+
+                <!-- 成功注册提示 -->
+                <div class="mb-4 p-3 bg-green-50 border border-green-200 rounded-md">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-green-700">
+                                注册成功！请使用您的邮箱和密码登录系统。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 登录表单 -->
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">邮箱</label>
+                        <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-input-background" placeholder="请输入邮箱地址" value="zhangsan@example.com">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">密码</label>
+                        <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-input-background" placeholder="请输入密码" value="••••••••">
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="remember" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" checked>
+                            <label for="remember" class="ml-2 text-sm text-gray-700">记住我</label>
+                        </div>
+                        <div>
+                            <a href="#" class="text-sm text-primary hover:underline">忘记密码？</a>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-primary text-primary-foreground py-2 px-4 rounded-md font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors">
+                        登录
+                    </button>
+                </form>
+
+                <!-- 其他登录选项 -->
+                <div class="mt-6">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">或者</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-2 gap-3">
+                        <button class="inline-flex w-full justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-500 bg-white hover:bg-gray-50">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.042-3.441.219-.937 1.406-5.957 1.406-5.957s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.653 2.567-.992 3.992-.281 1.191.597 2.161 1.771 2.161 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.1.12.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.017 0Z"/>
+                            </svg>
+                            <span class="ml-2">微信</span>
+                        </button>
+
+                        <button class="inline-flex w-full justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-500 bg-white hover:bg-gray-50">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 8.16c-.169-.233-.389-.417-.647-.54-.259-.123-.544-.185-.855-.185-.542 0-1.021.15-1.437.451-.415.3-.696.735-.843 1.305h-.002c-.001.003-.001.007-.002.011-.013.048-.024.097-.033.146-.004.024-.008.049-.011.074-.002.014-.003.029-.004.043-.005.039-.008.079-.01.118-.001.019-.001.038-.002.057l-.001.005v.002c-.001.018-.001.036-.001.054 0 .018 0 .036.001.054v.002l.001.005c.001.019.001.038.002.057.002.039.005.079.01.118.001.014.002.029.004.043.003.025.007.05.011.074.009.049.02.098.033.146.001.004.001.008.002.011h.002c.147.57.428 1.005.843 1.305.416.301.895.451 1.437.451.311 0 .596-.062.855-.185.258-.123.478-.307.647-.54.338-.464.507-1.046.507-1.745 0-.699-.169-1.281-.507-1.745z"/>
+                            </svg>
+                            <span class="ml-2">钉钉</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-600">
+                        还没有账户？ <a href="#" class="text-primary hover:underline font-medium">立即注册</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 底部信息 -->
+            <div class="mt-8 text-center text-sm text-gray-500">
+                <p>© 2024 产业集群发展潜力评估系统. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

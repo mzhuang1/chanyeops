@@ -1,0 +1,184 @@
+import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { TrendingUp, FileBarChart, Download, Eye } from 'lucide-react';
+
+export function IndustryAssessment() {
+  const assessmentItems = [
+    { 
+      title: '智能制造产业评估', 
+      status: '已完成', 
+      score: 85, 
+      date: '2025-01-15',
+      type: '综合评估'
+    },
+    { 
+      title: '新能源汽车产业链分析', 
+      status: '进行中', 
+      score: 72, 
+      date: '2025-01-10',
+      type: '专项评估'
+    },
+    { 
+      title: '生物医药产业竞争力评估', 
+      status: '待开始', 
+      score: 0, 
+      date: '2025-01-20',
+      type: '竞争力分析'
+    },
+  ];
+
+  const indicators = [
+    { name: '产业规模', value: 92, color: 'bg-blue-500' },
+    { name: '创新能力', value: 78, color: 'bg-green-500' },
+    { name: '市场竞争力', value: 85, color: 'bg-orange-500' },
+    { name: '可持续发展', value: 88, color: 'bg-purple-500' },
+  ];
+
+  return (
+    <div className="p-6 space-y-6 bg-gray-50 min-h-screen">
+      {/* Header */}
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900">产业测评</h1>
+          <p className="text-gray-600 mt-1">全面评估产业发展水平和竞争优势</p>
+        </div>
+        <Button className="bg-orange-500 hover:bg-orange-600 text-white">
+          开始新评估
+        </Button>
+      </div>
+
+      {/* Quick Stats */}
+      <div className="grid grid-cols-4 gap-6">
+        <Card className="p-6 bg-white">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">评估项目</p>
+              <p className="text-2xl font-bold text-gray-900 mt-1">24</p>
+            </div>
+            <FileBarChart className="w-8 h-8 text-blue-500" />
+          </div>
+        </Card>
+        <Card className="p-6 bg-white">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">已完成</p>
+              <p className="text-2xl font-bold text-gray-900 mt-1">18</p>
+            </div>
+            <TrendingUp className="w-8 h-8 text-green-500" />
+          </div>
+        </Card>
+        <Card className="p-6 bg-white">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">平均分数</p>
+              <p className="text-2xl font-bold text-gray-900 mt-1">82.5</p>
+            </div>
+            <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+              <span className="text-orange-600 text-lg">★</span>
+            </div>
+          </div>
+        </Card>
+        <Card className="p-6 bg-white">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">本月新增</p>
+              <p className="text-2xl font-bold text-gray-900 mt-1">6</p>
+            </div>
+            <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+              <span className="text-purple-600 text-lg font-bold">+</span>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      {/* Assessment Overview */}
+      <div className="grid grid-cols-3 gap-6">
+        <div className="col-span-2">
+          <Card className="p-6 bg-white">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">最近评估项目</h2>
+            <div className="space-y-4">
+              {assessmentItems.map((item, index) => (
+                <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3">
+                      <h3 className="font-medium text-gray-900">{item.title}</h3>
+                      <Badge variant={
+                        item.status === '已完成' ? 'default' : 
+                        item.status === '进行中' ? 'secondary' : 'outline'
+                      }>
+                        {item.status}
+                      </Badge>
+                    </div>
+                    <div className="flex items-center space-x-4 mt-2 text-sm text-gray-600">
+                      <span>{item.type}</span>
+                      <span>•</span>
+                      <span>{item.date}</span>
+                      {item.score > 0 && (
+                        <>
+                          <span>•</span>
+                          <span>评分: {item.score}</span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Button variant="ghost" size="sm">
+                      <Eye className="w-4 h-4" />
+                    </Button>
+                    <Button variant="ghost" size="sm">
+                      <Download className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+
+        <Card className="p-6 bg-white">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">评估指标</h2>
+          <div className="space-y-4">
+            {indicators.map((indicator, index) => (
+              <div key={index}>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium text-gray-700">{indicator.name}</span>
+                  <span className="text-sm font-semibold text-gray-900">{indicator.value}%</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div 
+                    className={`h-2 rounded-full ${indicator.color}`}
+                    style={{ width: `${indicator.value}%` }}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+
+      {/* Quick Actions */}
+      <Card className="p-6 bg-white">
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">快速操作</h2>
+        <div className="grid grid-cols-6 gap-4">
+          {[
+            { title: '产业调研', desc: '数据收集与分析', color: 'bg-blue-500' },
+            { title: '指标设置', desc: '评估标准配置', color: 'bg-green-500' },
+            { title: '专家评估', desc: '专业意见征集', color: 'bg-orange-500' },
+            { title: '结果分析', desc: '深度数据挖掘', color: 'bg-purple-500' },
+            { title: '报告生成', desc: '自动化报告', color: 'bg-red-500' },
+            { title: '方案建议', desc: '改进措施推荐', color: 'bg-indigo-500' },
+          ].map((action, index) => (
+            <div key={index} className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+              <div className={`w-8 h-8 ${action.color} rounded-lg mb-3`}></div>
+              <h3 className="text-sm font-medium text-gray-900 mb-1">{action.title}</h3>
+              <p className="text-xs text-gray-600">{action.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Card>
+    </div>
+  );
+}

@@ -1,0 +1,252 @@
+import React from 'react';
+import { Card } from '../ui/card';
+import { Button } from '../ui/button';
+import { Badge } from '../ui/badge';
+import { Progress } from '../ui/progress';
+import { MapPin, Building, Car, Wifi, Zap, Droplets, Users, TrendingUp } from 'lucide-react';
+
+export function ParkTrusteeship() {
+  const parks = [
+    {
+      name: '张江人工智能产业园',
+      location: '浦东新区张江镇',
+      area: '28.5万㎡',
+      companies: 156,
+      occupancy: 92,
+      revenue: '2.8亿',
+      status: '运营中'
+    },
+    {
+      name: '临港新能源汽车园区',
+      location: '临港新片区',
+      area: '45.2万㎡',
+      companies: 89,
+      occupancy: 78,
+      revenue: '1.9亿',
+      status: '运营中'
+    },
+    {
+      name: '浦西生物医药科技园',
+      location: '闵行区',
+      area: '32.8万㎡',
+      companies: 124,
+      occupancy: 85,
+      revenue: '2.3亿',
+      status: '筹建中'
+    }
+  ];
+
+  const infrastructure = [
+    { name: '电力供应', status: 98, unit: '%', icon: Zap, color: 'text-yellow-500' },
+    { name: '网络通信', status: 99, unit: '%', icon: Wifi, color: 'text-blue-500' },
+    { name: '给排水', status: 96, unit: '%', icon: Droplets, color: 'text-cyan-500' },
+    { name: '交通运输', status: 94, unit: '%', icon: Car, color: 'text-green-500' },
+  ];
+
+  const monthlyData = [
+    { month: '1月', revenue: 2800, occupancy: 92, newCompanies: 8 },
+    { month: '2月', revenue: 2950, occupancy: 94, newCompanies: 12 },
+    { month: '3月', revenue: 3100, occupancy: 95, newCompanies: 15 },
+    { month: '4月', revenue: 3250, occupancy: 96, newCompanies: 10 },
+  ];
+
+  return (
+    <div className="p-6 space-y-6">
+      {/* Header */}
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl text-gray-900">园区托管</h1>
+          <p className="text-gray-600 mt-1">专业的园区运营管理服务</p>
+        </div>
+        <Button className="bg-orange-500 hover:bg-orange-600">
+          添加新园区
+        </Button>
+      </div>
+
+      {/* Statistics */}
+      <div className="grid grid-cols-4 gap-6">
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">托管园区</p>
+              <p className="text-2xl text-gray-900 mt-1">8</p>
+            </div>
+            <Building className="w-8 h-8 text-blue-500" />
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">总面积</p>
+              <p className="text-2xl text-gray-900 mt-1">286万㎡</p>
+            </div>
+            <MapPin className="w-8 h-8 text-green-500" />
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">入驻企业</p>
+              <p className="text-2xl text-gray-900 mt-1">1,450</p>
+            </div>
+            <Users className="w-8 h-8 text-orange-500" />
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">平均入驻率</p>
+              <p className="text-2xl text-gray-900 mt-1">88%</p>
+            </div>
+            <TrendingUp className="w-8 h-8 text-purple-500" />
+          </div>
+        </Card>
+      </div>
+
+      {/* Park Overview */}
+      <div className="grid grid-cols-3 gap-6">
+        <div className="col-span-2">
+          <Card className="p-6">
+            <h2 className="text-lg text-gray-900 mb-4">园区概览</h2>
+            <div className="space-y-4">
+              {parks.map((park, index) => (
+                <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div className="flex justify-between items-start mb-3">
+                    <div>
+                      <h3 className="text-gray-900">{park.name}</h3>
+                      <div className="flex items-center space-x-4 mt-1 text-sm text-gray-600">
+                        <div className="flex items-center">
+                          <MapPin className="w-4 h-4 mr-1" />
+                          {park.location}
+                        </div>
+                        <span>面积: {park.area}</span>
+                        <span>{park.companies} 家企业</span>
+                        <span>营收: {park.revenue}</span>
+                      </div>
+                    </div>
+                    <Badge variant={park.status === '运营中' ? 'default' : 'secondary'}>
+                      {park.status}
+                    </Badge>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">入驻率</span>
+                      <span className="text-gray-900">{park.occupancy}%</span>
+                    </div>
+                    <Progress value={park.occupancy} className="h-2" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+
+        <Card className="p-6">
+          <h2 className="text-lg text-gray-900 mb-4">基础设施状态</h2>
+          <div className="space-y-4">
+            {infrastructure.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div key={index} className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <Icon className={`w-5 h-5 ${item.color}`} />
+                    <span className="text-gray-700">{item.name}</span>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm text-gray-900">{item.status}{item.unit}</div>
+                    <div className="w-16">
+                      <Progress value={item.status} className="h-1" />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Card>
+      </div>
+
+      {/* Monthly Performance */}
+      <Card className="p-6">
+        <h2 className="text-lg text-gray-900 mb-4">月度运营数据</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left py-2 text-gray-600">月份</th>
+                <th className="text-left py-2 text-gray-600">营收 (万元)</th>
+                <th className="text-left py-2 text-gray-600">入驻率 (%)</th>
+                <th className="text-left py-2 text-gray-600">新增企业</th>
+                <th className="text-left py-2 text-gray-600">趋势</th>
+              </tr>
+            </thead>
+            <tbody>
+              {monthlyData.map((data, index) => (
+                <tr key={index} className="border-b">
+                  <td className="py-3 text-gray-900">{data.month}</td>
+                  <td className="py-3 text-gray-900">{data.revenue}</td>
+                  <td className="py-3">
+                    <div className="flex items-center space-x-2">
+                      <span className="text-gray-900">{data.occupancy}</span>
+                      <div className="w-20">
+                        <Progress value={data.occupancy} className="h-1" />
+                      </div>
+                    </div>
+                  </td>
+                  <td className="py-3 text-gray-900">{data.newCompanies}</td>
+                  <td className="py-3">
+                    <TrendingUp className="w-4 h-4 text-green-500" />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Card>
+
+      {/* Services */}
+      <Card className="p-6">
+        <h2 className="text-lg text-gray-900 mb-4">园区服务</h2>
+        <div className="grid grid-cols-6 gap-4">
+          {[
+            { title: '物业管理', desc: '日常物业维护', color: 'bg-blue-500', icon: '🏢' },
+            { title: '安全保卫', desc: '24小时安保服务', color: 'bg-green-500', icon: '🛡️' },
+            { title: '环境维护', desc: '绿化清洁服务', color: 'bg-orange-500', icon: '🌱' },
+            { title: '招商服务', desc: '企业入驻服务', color: 'bg-purple-500', icon: '🤝' },
+            { title: '政务服务', desc: '行政审批代办', color: 'bg-red-500', icon: '📋' },
+            { title: '配套服务', desc: '餐饮住宿等', color: 'bg-indigo-500', icon: '🍽️' },
+          ].map((service, index) => (
+            <div key={index} className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+              <div className="text-2xl mb-3">{service.icon}</div>
+              <h3 className="text-sm text-gray-900 mb-1">{service.title}</h3>
+              <p className="text-xs text-gray-600">{service.desc}</p>
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      {/* Enterprise Categories */}
+      <Card className="p-6">
+        <h2 className="text-lg text-gray-900 mb-4">企业类型分布</h2>
+        <div className="grid grid-cols-4 gap-6">
+          {[
+            { category: '科技创新', count: 456, percentage: 35, color: 'bg-blue-100 text-blue-800' },
+            { category: '先进制造', count: 325, percentage: 25, color: 'bg-green-100 text-green-800' },
+            { category: '现代服务', count: 298, percentage: 23, color: 'bg-orange-100 text-orange-800' },
+            { category: '其他行业', count: 221, percentage: 17, color: 'bg-purple-100 text-purple-800' },
+          ].map((item, index) => (
+            <div key={index} className="text-center">
+              <div className="mb-3">
+                <div className="text-2xl text-gray-900 mb-1">{item.count}</div>
+                <div className="text-sm text-gray-600">{item.category}</div>
+              </div>
+              <div className="space-y-2">
+                <Badge className={item.color}>{item.percentage}%</Badge>
+                <Progress value={item.percentage} className="h-2" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </Card>
+    </div>
+  );
+}

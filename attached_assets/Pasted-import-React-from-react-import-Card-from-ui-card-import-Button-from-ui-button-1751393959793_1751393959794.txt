@@ -1,0 +1,215 @@
+import React from 'react';
+import { Card } from '../ui/card';
+import { Button } from '../ui/button';
+import { Badge } from '../ui/badge';
+import { Progress } from '../ui/progress';
+import { GraduationCap, Users, BookOpen, Award, Calendar, Clock } from 'lucide-react';
+
+export function IndustryTraining() {
+  const courses = [
+    {
+      title: '数字化转型实战训练营',
+      category: '数字化',
+      instructor: '张教授',
+      students: 156,
+      duration: '8周',
+      status: '进行中',
+      progress: 65
+    },
+    {
+      title: '产业链管理与优化',
+      category: '管理',
+      instructor: '李专家',
+      students: 89,
+      duration: '6周',
+      status: '即将开始',
+      progress: 0
+    },
+    {
+      title: '新能源技术前沿',
+      category: '技术',
+      instructor: '王博士',
+      students: 124,
+      duration: '10周',
+      status: '已完成',
+      progress: 100
+    }
+  ];
+
+  const trainingStats = [
+    { name: '技能提升', value: 85, participants: 1250 },
+    { name: '管理能力', value: 78, participants: 890 },
+    { name: '创新思维', value: 92, participants: 1560 },
+    { name: '领导力', value: 73, participants: 760 }
+  ];
+
+  return (
+    <div className="p-6 space-y-6">
+      {/* Header */}
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl text-gray-900">产业培训</h1>
+          <p className="text-gray-600 mt-1">提升产业人才技能，促进创新发展</p>
+        </div>
+        <Button className="bg-orange-500 hover:bg-orange-600">
+          开设新课程
+        </Button>
+      </div>
+
+      {/* Statistics */}
+      <div className="grid grid-cols-4 gap-6">
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">培训课程</p>
+              <p className="text-2xl text-gray-900 mt-1">68</p>
+            </div>
+            <BookOpen className="w-8 h-8 text-blue-500" />
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">学员总数</p>
+              <p className="text-2xl text-gray-900 mt-1">4,230</p>
+            </div>
+            <Users className="w-8 h-8 text-green-500" />
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">完成率</p>
+              <p className="text-2xl text-gray-900 mt-1">89%</p>
+            </div>
+            <Award className="w-8 h-8 text-orange-500" />
+          </div>
+        </Card>
+        <Card className="p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-600">满意度</p>
+              <p className="text-2xl text-gray-900 mt-1">4.8</p>
+            </div>
+            <GraduationCap className="w-8 h-8 text-purple-500" />
+          </div>
+        </Card>
+      </div>
+
+      {/* Course Overview */}
+      <div className="grid grid-cols-3 gap-6">
+        <div className="col-span-2">
+          <Card className="p-6">
+            <h2 className="text-lg text-gray-900 mb-4">热门课程</h2>
+            <div className="space-y-4">
+              {courses.map((course, index) => (
+                <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div className="flex justify-between items-start mb-3">
+                    <div>
+                      <h3 className="text-gray-900">{course.title}</h3>
+                      <div className="flex items-center space-x-4 mt-1 text-sm text-gray-600">
+                        <Badge variant="outline">{course.category}</Badge>
+                        <span>{course.instructor}</span>
+                        <div className="flex items-center">
+                          <Users className="w-4 h-4 mr-1" />
+                          {course.students}
+                        </div>
+                        <div className="flex items-center">
+                          <Clock className="w-4 h-4 mr-1" />
+                          {course.duration}
+                        </div>
+                      </div>
+                    </div>
+                    <Badge variant={
+                      course.status === '进行中' ? 'default' : 
+                      course.status === '即将开始' ? 'secondary' : 'outline'
+                    }>
+                      {course.status}
+                    </Badge>
+                  </div>
+                  {course.progress > 0 && (
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-600">课程进度</span>
+                        <span className="text-gray-900">{course.progress}%</span>
+                      </div>
+                      <Progress value={course.progress} className="h-2" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+
+        <Card className="p-6">
+          <h2 className="text-lg text-gray-900 mb-4">培训效果</h2>
+          <div className="space-y-4">
+            {trainingStats.map((stat, index) => (
+              <div key={index}>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm text-gray-700">{stat.name}</span>
+                  <div className="text-right">
+                    <div className="text-sm text-gray-900">{stat.value}%</div>
+                    <div className="text-xs text-gray-500">{stat.participants}人</div>
+                  </div>
+                </div>
+                <Progress value={stat.value} className="h-2" />
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+
+      {/* Training Calendar */}
+      <Card className="p-6">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-lg text-gray-900">培训日程</h2>
+          <Button variant="outline" size="sm">
+            <Calendar className="w-4 h-4 mr-2" />
+            查看全部
+          </Button>
+        </div>
+        <div className="grid grid-cols-7 gap-4">
+          {[
+            { date: '1月15日', event: '数字化转型讲座', type: '讲座' },
+            { date: '1月18日', event: '管理技能提升', type: '培训' },
+            { date: '1月22日', event: '创新思维工作坊', type: '工作坊' },
+            { date: '1月25日', event: '行业前沿研讨', type: '研讨会' },
+            { date: '1月28日', event: '技术实操训练', type: '实训' },
+            { date: '2月1日', event: '领导力发展', type: '培训' },
+            { date: '2月5日', event: '项目管理认证', type: '认证' },
+          ].map((item, index) => (
+            <div key={index} className="p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+              <div className="text-sm text-gray-600 mb-1">{item.date}</div>
+              <div className="text-sm text-gray-900 mb-2">{item.event}</div>
+              <Badge variant="outline" className="text-xs">{item.type}</Badge>
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      {/* Training Categories */}
+      <Card className="p-6">
+        <h2 className="text-lg text-gray-900 mb-4">培训类别</h2>
+        <div className="grid grid-cols-4 gap-4">
+          {[
+            { category: '技术技能', courses: 28, color: 'bg-blue-500', icon: '🔧' },
+            { category: '管理能力', courses: 18, color: 'bg-green-500', icon: '📊' },
+            { category: '创新思维', courses: 15, color: 'bg-orange-500', icon: '💡' },
+            { category: '领导力', courses: 7, color: 'bg-purple-500', icon: '👑' },
+          ].map((item, index) => (
+            <div key={index} className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-2xl">{item.icon}</span>
+                <Badge className="bg-gray-100 text-gray-800">{item.courses}</Badge>
+              </div>
+              <h3 className="text-gray-900">{item.category}</h3>
+              <p className="text-sm text-gray-600 mt-1">{item.courses} 门课程</p>
+            </div>
+          ))}
+        </div>
+      </Card>
+    </div>
+  );
+}

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板库 - 产业集群发展潜力评估系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#ffffff',
+                        foreground: '#2a2a2a',
+                        primary: '#1e88e5',
+                        'primary-foreground': '#ffffff',
+                        muted: '#ececf0',
+                        'muted-foreground': '#717182',
+                        border: 'rgba(0, 0, 0, 0.1)',
+                        'input-background': '#f3f3f5',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-background text-foreground">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <svg width="20" height="20" viewBox="0 0 156 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M77.798 154C121.121 154 156 119.346 156 76.298C156 33.25 121.121 0 77.798 0C34.474 0 0 33.25 0 76.298C0 119.346 34.474 154 77.798 154Z" fill="#1E88E5"/>
+                                <path d="M49.8 54.5C53.5 49.7 58.3 46.1 64.3 43.7C70.2 41.3 76.6 40.1 83.3 40.1C90 40.1 96.4 41.3 102.3 43.7C108.3 46.1 113.1 49.7 116.8 54.5L105.2 63.5C103 60.6 100.2 58.4 96.8 56.9C93.4 55.3 89.6 54.6 85.4 54.6C81.2 54.6 77.4 55.3 74 56.9C70.6 58.4 67.8 60.6 65.6 63.5L49.8 54.5Z" fill="white"/>
+                                <path d="M40.8 102.3C37.1 97.5 35.3 91.7 35.3 85.1C35.3 78.5 37.1 72.8 40.8 67.9C44.5 63 49.4 59.3 55.3 56.9C61.3 54.5 67.8 53.3 74.8 53.3C81.8 53.3 88.3 54.5 94.3 56.9C100.2 59.3 105.1 63 108.8 67.9C112.5 72.8 114.3 78.5 114.3 85.1C114.3 91.7 112.5 97.5 108.8 102.3C105.1 107.2 100.2 110.9 94.3 113.3C88.3 115.7 81.8 116.9 74.8 116.9C67.8 116.9 61.3 115.7 55.3 113.3C49.4 110.9 44.5 107.2 40.8 102.3ZM93.9 94C96.1 91.2 97.2 88 97.2 84.3C97.2 80.6 96.1 77.3 93.9 74.6C91.7 71.8 88.9 69.8 85.5 68.6C82.1 67.3 78.5 66.7 74.8 66.7C71.1 66.7 67.5 67.3 64.1 68.6C60.7 69.8 57.9 71.8 55.7 74.6C53.5 77.3 52.4 80.6 52.4 84.3C52.4 88 53.5 91.2 55.7 94C57.9 96.7 60.7 98.7 64.1 100C67.5 101.2 71.1 101.8 74.8 101.8C78.5 101.8 82.1 101.2 85.5 100C88.9 98.7 91.7 96.7 93.9 94Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="text-lg font-semibold">产业集群发展潜力评估系统</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#" class="text-gray-500 hover:text-gray-700 px-1 py-4 text-sm font-medium">首页</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-700 px-1 py-4 text-sm font-medium">智能对话</a>
+                        <a href="#" class="text-primary border-b-2 border-primary px-1 py-4 text-sm font-medium">模板库</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-700 px-1 py-4 text-sm font-medium">搜索</a>
+                    </nav>
+                    
+                    <div class="flex items-center space-x-3">
+                        <span class="text-sm text-gray-500">研究人员</span>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                                <span class="text-sm font-medium text-gray-600">张</span>
+                            </div>
+                            <span class="text-sm font-medium">张三</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面内容 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- 页面标题和搜索 -->
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900">报告模板库</h1>
+                <p class="mt-2 text-gray-600">选择专业模板，快速生成产业集群评估报告</p>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="搜索模板..." 
+                           class="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary">
+                    <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+                
+                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 flex items-center">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                    </svg>
+                    创建模板
+                </button>
+            </div>
+        </div>
+
+        <!-- 筛选栏 -->
+        <div class="bg-white rounded-lg border p-4 mb-6">
+            <div class="flex flex-wrap items-center gap-4">
+                <div class="flex items-center space-x-2">
+                    <label class="text-sm font-medium text-gray-700">分类：</label>
+                    <select class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                        <option>全部分类</option>
+                        <option>综合评估</option>
+                        <option>专项分析</option>
+                        <option>对比研究</option>
+                        <option>预测分析</option>
+                    </select>
+                </div>
+                
+                <div class="flex items-center space-x-2">
+                    <label class="text-sm font-medium text-gray-700">适用场景：</label>
+                    <select class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                        <option>全部场景</option>
+                        <option>政府决策</option>
+                        <option>园区规划</option>
+                        <option>投资分析</option>
+                        <option>学术研究</option>
+                    </select>
+                </div>
+                
+                <div class="flex items-center space-x-2">
+                    <label class="text-sm font-medium text-gray-700">排序：</label>
+                    <select class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                        <option>最受欢迎</option>
+                        <option>最新发布</option>
+                        <option>使用最多</option>
+                        <option>评分最高</option>
+                    </select>
+                </div>
+                
+                <div class="flex items-center space-x-2 ml-auto">
+                    <span class="text-sm text-gray-500">找到 24 个模板</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模板网格 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 热门模板1 -->
+            <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="产业集群综合评估报告" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="absolute top-3 left-3">
+                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full">热门</span>
+                    </div>
+                    <div class="absolute top-3 right-3">
+                        <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">官方</span>
+                    </div>
+                </div>
+                
+                <div class="p-4">
+                    <div class="flex items-start justify-between mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900">产业集群综合评估报告</h3>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-gray-600 ml-1">4.9</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                        全面评估产业集群的发展现状、创新能力、人才结构、产业链完整性和未来发展潜力，适用于政府决策和园区规划。
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">综合评估</span>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">政府决策</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">园区规划</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between text-sm text-gray-500 mb-3">
+                        <span>预计 35 页</span>
+                        <span>使用 382 次</span>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-2 px-3 rounded-md text-sm hover:bg-blue-600">
+                            立即使用
+                        </button>
+                        <button class="border border-gray-300 py-2 px-3 rounded-md text-sm hover:bg-gray-50">
+                            预览
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模板2 -->
+            <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="产业集群创新生态报告" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="absolute top-3 right-3">
+                        <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">官方</span>
+                    </div>
+                </div>
+                
+                <div class="p-4">
+                    <div class="flex items-start justify-between mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900">产业集群创新生态报告</h3>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-gray-600 ml-1">4.7</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                        专注于产业集群的创新网络、知识流动和创新主体互动分析，深入研究创新生态系统的构建与优化。
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">专项分析</span>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">创新政策</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">科技园区</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between text-sm text-gray-500 mb-3">
+                        <span>预计 25 页</span>
+                        <span>使用 98 次</span>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-2 px-3 rounded-md text-sm hover:bg-blue-600">
+                            立即使用
+                        </button>
+                        <button class="border border-gray-300 py-2 px-3 rounded-md text-sm hover:bg-gray-50">
+                            预览
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模板3 -->
+            <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="产业集群竞争力分析报告" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="absolute top-3 left-3">
+                        <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full">新</span>
+                    </div>
+                </div>
+                
+                <div class="p-4">
+                    <div class="flex items-start justify-between mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900">产业集群竞争力分析报告</h3>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-gray-600 ml-1">4.8</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                        深度分析产业集群的国际竞争力，包含市场地位、技术优势、成本结构等多维度竞争力评估。
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full">对比研究</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">投资分析</span>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">企业决策</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between text-sm text-gray-500 mb-3">
+                        <span>预计 28 页</span>
+                        <span>使用 156 次</span>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-2 px-3 rounded-md text-sm hover:bg-blue-600">
+                            立即使用
+                        </button>
+                        <button class="border border-gray-300 py-2 px-3 rounded-md text-sm hover:bg-gray-50">
+                            预览
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模板4 -->
+            <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="产业集群发展趋势预测报告" class="w-full h-48 object-cover rounded-t-lg">
+                </div>
+                
+                <div class="p-4">
+                    <div class="flex items-start justify-between mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900">产业集群发展趋势预测报告</h3>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-gray-600 ml-1">4.6</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                        基于大数据和AI算法预测产业集群未来3-5年发展趋势，为战略规划提供科学依据。
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">预测分析</span>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">战略规划</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">政策制定</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between text-sm text-gray-500 mb-3">
+                        <span>预计 32 页</span>
+                        <span>使用 203 次</span>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-2 px-3 rounded-md text-sm hover:bg-blue-600">
+                            立即使用
+                        </button>
+                        <button class="border border-gray-300 py-2 px-3 rounded-md text-sm hover:bg-gray-50">
+                            预览
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模板5 -->
+            <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="产业集群数字化转型报告" class="w-full h-48 object-cover rounded-t-lg">
+                </div>
+                
+                <div class="p-4">
+                    <div class="flex items-start justify-between mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900">产业集群数字化转型报告</h3>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-gray-600 ml-1">4.5</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                        评估产业集群数字化转型现状，分析转型路径和关键技术，制定数字化发展策略。
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">专项分析</span>
+                        <span class="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full">数字化</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">技术升级</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between text-sm text-gray-500 mb-3">
+                        <span>预计 30 页</span>
+                        <span>使用 87 次</span>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-2 px-3 rounded-md text-sm hover:bg-blue-600">
+                            立即使用
+                        </button>
+                        <button class="border border-gray-300 py-2 px-3 rounded-md text-sm hover:bg-gray-50">
+                            预览
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模板6 -->
+            <div class="bg-white rounded-lg border shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="产业集群政策影响评估报告" class="w-full h-48 object-cover rounded-t-lg">
+                </div>
+                
+                <div class="p-4">
+                    <div class="flex items-start justify-between mb-2">
+                        <h3 class="text-lg font-semibold text-gray-900">产业集群政策影响评估报告</h3>
+                        <div class="flex items-center">
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="text-sm text-gray-600 ml-1">4.7</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                        分析政策对产业集群发展的影响机制，评估政策效果，为政策优化提供建议。
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">政策分析</span>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">政府决策</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">影响评估</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between text-sm text-gray-500 mb-3">
+                        <span>预计 26 页</span>
+                        <span>使用 145 次</span>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-2 px-3 rounded-md text-sm hover:bg-blue-600">
+                            立即使用
+                        </button>
+                        <button class="border border-gray-300 py-2 px-3 rounded-md text-sm hover:bg-gray-50">
+                            预览
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 分页 -->
+        <div class="flex items-center justify-center mt-8">
+            <nav class="flex items-center space-x-2">
+                <button class="px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">
+                    上一页
+                </button>
+                <button class="px-3 py-2 bg-primary text-white rounded-md text-sm">1</button>
+                <button class="px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">2</button>
+                <button class="px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">3</button>
+                <span class="px-3 py-2 text-gray-500">...</span>
+                <button class="px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">8</button>
+                <button class="px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-50">
+                    下一页
+                </button>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>

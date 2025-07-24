@@ -1,0 +1,66 @@
+{
+  "zh": [
+    {
+      "id": 1,
+      "question": "如何进行五年规划？",
+      "category": "planning"
+    },
+    {
+      "id": 2,
+      "question": "如何评估某产业的优势？",
+      "category": "evaluation"
+    },
+    {
+      "id": 3,
+      "question": "请帮我分析这份Excel表中的结构",
+      "category": "analysis"
+    },
+    {
+      "id": 4,
+      "question": "产业集群发展现状如何分析？",
+      "category": "analysis"
+    },
+    {
+      "id": 5,
+      "question": "如何制定产业发展策略？",
+      "category": "strategy"
+    },
+    {
+      "id": 6,
+      "question": "区域经济优势分析方法有哪些？",
+      "category": "evaluation"
+    }
+  ],
+  "en": [
+    {
+      "id": 1,
+      "question": "How to create a five-year plan?",
+      "category": "planning"
+    },
+    {
+      "id": 2,
+      "question": "How to evaluate industry advantages?",
+      "category": "evaluation"
+    },
+    {
+      "id": 3,
+      "question": "Please help me analyze the structure of this Excel sheet",
+      "category": "analysis"
+    },
+    {
+      "id": 4,
+      "question": "How to analyze industrial cluster development status?",
+      "category": "analysis"
+    },
+    {
+      "id": 5,
+      "question": "How to develop industrial strategies?",
+      "category": "strategy"
+    },
+    {
+      "id": 6,
+      "question": "What methods exist for regional economic advantage analysis?",
+      "category": "evaluation"
+    }
+  ]
+}

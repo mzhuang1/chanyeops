@@ -1,0 +1,99 @@
+# 创建 FastAPI 后端目录
+mkdir backend_fastapi && cd backend_fastapi
+
+# 创建目录结构
+mkdir agent api services outputs
+
+# 创建 requirements.txt
+echo "fastapi
+uvicorn
+langchain
+openai
+pydantic
+python-docx
+requests
+modelcontextprotocol
+" > requirements.txt
+
+# 创建 main.py
+cat > main.py <<EOF
+from fastapi import FastAPI
+from api.chat_api import router as chat_router
+from fastapi.staticfiles import StaticFiles
+
+app = FastAPI()
+app.include_router(chat_router, prefix="/api")
+app.mount("/download", StaticFiles(directory="outputs"), name="download")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+EOF
+
+# 创建 agent/agent_executor.py
+cat > agent/agent_executor.py <<EOF
+from langchain.agents import initialize_agent, Tool
+from langchain.chat_models import ChatOpenAI
+from services.chart_generator import generate_chart
+from services.report_generator import generate_report
+
+llm = ChatOpenAI(model="gpt-4")
+
+tools = [
+    Tool(name="GenerateChart", func=generate_chart, description="根据提示生成 ECharts JSON 图表"),
+    Tool(name="GenerateReport", func=generate_report, description="根据提示生成 Word 报告")
+]
+
+agent_executor = initialize_agent(tools, llm, agent="openai-functions", verbose=True)
+EOF
+
+# 创建 services/chart_generator.py
+cat > services/chart_generator.py <<EOF
+import json
+
+def generate_chart(prompt: str) -> str:
+    chart = {
+        "title": {"text": prompt},
+        "xAxis": {"data": ["A", "B", "C"]},
+        "yAxis": {"type": "value"},
+        "series": [{"type": "bar", "data": [100, 200, 150]}]
+    }
+    return json.dumps(chart)
+EOF
+
+# 创建 services/report_generator.py
+cat > services/report_generator.py <<EOF
+from docx import Document
+import os
+
+def generate_report(topic: str) -> str:
+    doc = Document()
+    doc.add_heading(f"报告主题：{topic}", level=1)
+    doc.add_paragraph("这是基于用户提示生成的专业报告内容示例...")
+    os.makedirs("outputs", exist_ok=True)
+    filename = f"{topic.replace(' ', '_')}.docx"
+    path = f"outputs/{filename}"
+    doc.save(path)
+    return f"/download/{filename}"
+EOF
+
+# 创建 api/chat_api.py
+cat > api/chat_api.py <<EOF
+from fastapi import APIRouter
+from pydantic import BaseModel
+from agent.agent_executor import agent_executor
+
+router = APIRouter()
+
+class ChatInput(BaseModel):
+    session_id: str
+    user_input: str
+
+@router.post("/chat")
+def chat(req: ChatInput):
+    result = agent_executor.run(input=req.user_input)
+    return {"response": result}
+EOF
+
+# 创建空 outputs 文件夹
+mkdir outputs

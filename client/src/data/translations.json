@@ -1,0 +1,288 @@
+{
+  "zh": {
+    "common": {
+      "loading": "加载中...",
+      "error": "错误",
+      "success": "成功",
+      "cancel": "取消",
+      "confirm": "确认",
+      "save": "保存",
+      "delete": "删除",
+      "edit": "编辑",
+      "create": "创建",
+      "search": "搜索",
+      "back": "返回",
+      "next": "下一步",
+      "previous": "上一步",
+      "submit": "提交",
+      "retry": "重试",
+      "close": "关闭",
+      "open": "打开",
+      "select": "选择",
+      "upload": "上传",
+      "download": "下载",
+      "export": "导出",
+      "import": "导入",
+      "refresh": "刷新",
+      "settings": "设置",
+      "help": "帮助",
+      "about": "关于",
+      "contact": "联系我们"
+    },
+    "app": {
+      "title": "产业集群发展潜力评估系统",
+      "subtitle": "智能化产业分析与规划平台",
+      "description": "基于AI技术的专业产业集群分析工具，为政府决策和企业发展提供数据支撑"
+    },
+    "auth": {
+      "login": "登录",
+      "logout": "退出",
+      "register": "注册",
+      "forgotPassword": "忘记密码",
+      "resetPassword": "重置密码",
+      "loginExpired": "登录已过期",
+      "relogin": "正在重新登录..."
+    },
+    "navigation": {
+      "home": "首页",
+      "chat": "智能对话",
+      "knowledge": "知识库管理",
+      "templates": "模板库",
+      "search": "搜索",
+      "planning": "规划生成",
+      "admin": "系统管理",
+      "profile": "个人资料"
+    },
+    "chat": {
+      "title": "智能分析助手",
+      "subtitle": "我是您的AI智能分析助手，可以帮您分析产业数据、生成规划报告",
+      "newConversation": "新建对话",
+      "conversationHistory": "对话历史",
+      "noConversations": "暂无对话历史",
+      "sendMessage": "发送消息",
+      "typing": "正在输入...",
+      "aiTyping": "AI正在思考...",
+      "deleteConversation": "删除对话",
+      "deleteMessage": "删除消息",
+      "confirmDelete": "确定要删除这个对话吗？",
+      "confirmDeleteMessage": "确定要删除这条消息吗？",
+      "faqTitle": "常见问题",
+      "hello": "您好，我是您的AI助手",
+      "welcomeSubtitle": "专业的产业集群分析，为您的决策提供数据支撑",
+      "placeholder": "输入您的问题或需求...",
+      "enableWebSearch": "启用网络搜索",
+      "fileUpload": "上传文件",
+      "knowledgeBase": "知识库",
+      "documentChat": "文档问答"
+    },
+    "fileUpload": {
+      "title": "文件上传",
+      "success": "文件上传成功",
+      "failed": "文件上传失败",
+      "processing": "文件处理中...",
+      "maxSize": "文件大小不能超过10MB",
+      "supportedFormats": "支持格式：Excel, Word, PDF, CSV, 图片"
+    },
+    "search": {
+      "title": "网络搜索",
+      "placeholder": "输入搜索关键词...",
+      "noResults": "未找到相关结果",
+      "searching": "搜索中...",
+      "results": "搜索结果"
+    },
+    "planning": {
+      "title": "规划生成",
+      "createProject": "创建规划项目",
+      "projectTitle": "项目标题",
+      "region": "地区",
+      "planType": "规划类型",
+      "template": "选择模板",
+      "webSearch": "启用网络搜索",
+      "referenceFiles": "参考文件",
+      "generate": "生成规划",
+      "status": {
+        "draft": "草稿",
+        "generating": "生成中",
+        "completed": "已完成",
+        "failed": "生成失败"
+      }
+    },
+    "templates": {
+      "title": "模板库",
+      "category": "分类",
+      "description": "描述",
+      "usage": "使用次数",
+      "rating": "评分",
+      "preview": "预览",
+      "use": "使用模板",
+      "create": "创建报告"
+    },
+    "admin": {
+      "title": "系统管理",
+      "users": "用户管理",
+      "settings": "系统设置",
+      "statistics": "统计信息",
+      "logs": "系统日志"
+    },
+    "errors": {
+      "networkError": "网络连接失败",
+      "serverError": "服务器错误",
+      "unauthorized": "未授权访问",
+      "notFound": "页面未找到",
+      "validationError": "输入验证失败",
+      "uploadFailed": "文件上传失败",
+      "processingFailed": "文件处理失败"
+    },
+    "success": {
+      "saved": "保存成功",
+      "created": "创建成功",
+      "updated": "更新成功",
+      "deleted": "删除成功",
+      "uploaded": "上传成功",
+      "exported": "导出成功"
+    }
+  },
+  "en": {
+    "common": {
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit",
+      "create": "Create",
+      "search": "Search",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "submit": "Submit",
+      "retry": "Retry",
+      "close": "Close",
+      "open": "Open",
+      "select": "Select",
+      "upload": "Upload",
+      "download": "Download",
+      "export": "Export",
+      "import": "Import",
+      "refresh": "Refresh",
+      "settings": "Settings",
+      "help": "Help",
+      "about": "About",
+      "contact": "Contact Us"
+    },
+    "app": {
+      "title": "Industrial Cluster Development Potential Assessment System",
+      "subtitle": "Intelligent Industrial Analysis and Planning Platform",
+      "description": "Professional AI-powered industrial cluster analysis tool providing data support for government decisions and enterprise development"
+    },
+    "auth": {
+      "login": "Login",
+      "logout": "Logout",
+      "register": "Register",
+      "forgotPassword": "Forgot Password",
+      "resetPassword": "Reset Password",
+      "loginExpired": "Login expired",
+      "relogin": "Re-authenticating..."
+    },
+    "navigation": {
+      "home": "Home",
+      "chat": "AI Assistant",
+      "knowledge": "Knowledge Base",
+      "templates": "Templates",
+      "search": "Search",
+      "planning": "Planning",
+      "admin": "Administration",
+      "profile": "Profile"
+    },
+    "chat": {
+      "title": "Intelligent Analysis Assistant",
+      "subtitle": "I'm your AI analysis assistant, ready to help you analyze industrial data and generate planning reports",
+      "newConversation": "New Conversation",
+      "conversationHistory": "Conversation History",
+      "noConversations": "No conversation history",
+      "sendMessage": "Send Message",
+      "typing": "Typing...",
+      "aiTyping": "AI is thinking...",
+      "deleteConversation": "Delete Conversation",
+      "deleteMessage": "Delete Message",
+      "confirmDelete": "Are you sure you want to delete this conversation?",
+      "confirmDeleteMessage": "Are you sure you want to delete this message?",
+      "faqTitle": "Frequently Asked Questions",
+      "hello": "Hello, I'm your AI assistant",
+      "welcomeSubtitle": "Professional industrial cluster analysis to support your decisions",
+      "placeholder": "Enter your question or request...",
+      "enableWebSearch": "Enable Web Search",
+      "fileUpload": "Upload File",
+      "knowledgeBase": "Knowledge Base",
+      "documentChat": "Document Q&A"
+    },
+    "fileUpload": {
+      "title": "File Upload",
+      "success": "File uploaded successfully",
+      "failed": "File upload failed",
+      "processing": "Processing file...",
+      "maxSize": "File size cannot exceed 10MB",
+      "supportedFormats": "Supported formats: Excel, Word, PDF, CSV, Images"
+    },
+    "search": {
+      "title": "Web Search",
+      "placeholder": "Enter search keywords...",
+      "noResults": "No relevant results found",
+      "searching": "Searching...",
+      "results": "Search Results"
+    },
+    "planning": {
+      "title": "Planning Generation",
+      "createProject": "Create Planning Project",
+      "projectTitle": "Project Title",
+      "region": "Region",
+      "planType": "Plan Type",
+      "template": "Select Template",
+      "webSearch": "Enable Web Search",
+      "referenceFiles": "Reference Files",
+      "generate": "Generate Plan",
+      "status": {
+        "draft": "Draft",
+        "generating": "Generating",
+        "completed": "Completed",
+        "failed": "Generation Failed"
+      }
+    },
+    "templates": {
+      "title": "Template Library",
+      "category": "Category",
+      "description": "Description",
+      "usage": "Usage Count",
+      "rating": "Rating",
+      "preview": "Preview",
+      "use": "Use Template",
+      "create": "Create Report"
+    },
+    "admin": {
+      "title": "System Administration",
+      "users": "User Management",
+      "settings": "System Settings",
+      "statistics": "Statistics",
+      "logs": "System Logs"
+    },
+    "errors": {
+      "networkError": "Network connection failed",
+      "serverError": "Server error",
+      "unauthorized": "Unauthorized access",
+      "notFound": "Page not found",
+      "validationError": "Input validation failed",
+      "uploadFailed": "File upload failed",
+      "processingFailed": "File processing failed"
+    },
+    "success": {
+      "saved": "Saved successfully",
+      "created": "Created successfully",
+      "updated": "Updated successfully",
+      "deleted": "Deleted successfully",
+      "uploaded": "Uploaded successfully",
+      "exported": "Exported successfully"
+    }
+  }
+}

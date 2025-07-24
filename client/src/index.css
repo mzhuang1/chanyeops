@@ -1,0 +1,522 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar hiding for mobile navigation */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile-friendly touch scrolling */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Mobile-first optimizations for touch devices */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  button, a, input, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+  
+  /* Smooth scrolling for mobile */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Reduce animations on mobile for better performance */
+  *, *::before, *::after {
+    animation-duration: 0.3s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.3s !important;
+  }
+}
+
+/* PWA-like experience */
+@media (display-mode: standalone) {
+  body {
+    /* Remove any top padding when in standalone mode */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #2a2a2a;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --popover: #ffffff;
+  --popover-foreground: #2a2a2a;
+  --card: #ffffff;
+  --card-foreground: #2a2a2a;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: #f3f3f5;
+  --primary: #1e88e5;
+  --primary-foreground: #ffffff;
+  --secondary: #161b94;
+  --secondary-foreground: #ffffff;
+  --accent: #38925f;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #f9fafb;
+  --ring: #1e88e5;
+  --radius: 0.5rem;
+  --chart-1: #1e88e5;
+  --chart-2: #161b94;
+  --chart-3: #38925f;
+  --chart-4: #e53e3e;
+  --chart-5: #805ad5;
+}
+
+.dark {
+  --background: #0f0f0f;
+  --foreground: #fafafa;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --popover: #0f0f0f;
+  --popover-foreground: #fafafa;
+  --card: #0f0f0f;
+  --card-foreground: #fafafa;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: #262626;
+  --primary: #1e88e5;
+  --primary-foreground: #ffffff;
+  --secondary: #161b94;
+  --secondary-foreground: #ffffff;
+  --accent: #38925f;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #fafafa;
+  --ring: #1e88e5;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground;
+    font-family: 'Inter', 'Source Han Sans CN', system-ui, sans-serif;
+    background: var(--background);
+  }
+}
+
+/* Fix duplicate input area issue */
+#chat-input-area-main {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Hide any potential duplicate input components */
+.chat-interface-input {
+  display: none !important;
+}
+
+/* Ensure only the main chat input is visible */
+div[class*="chat-input"]:not(#chat-input-area-main) {
+  display: none !important;
+}
+
+/* Enhanced mobile responsiveness for chat session items */
+@media (max-width: 768px) {
+  .chat-session-item {
+    padding: 12px 8px;
+  }
+  
+  .chat-session-menu {
+    position: fixed !important;
+    right: 8px !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    max-width: calc(100vw - 16px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+  }
+  
+  .chat-session-menu .submenu {
+    position: static !important;
+    box-shadow: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 4px;
+    padding-top: 4px;
+  }
+}
+
+/* Smooth animations for chat session interactions */
+.chat-session-item {
+  transition: all 0.15s ease-in-out;
+}
+
+.chat-session-item:hover {
+  transform: translateX(2px);
+}
+
+.chat-session-edit-input {
+  animation: focus-in 0.2s ease-out;
+}
+
+@keyframes focus-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Project color indicators */
+.project-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+/* ChatGPT-style collapsible sidebar */
+.sidebar-collapsed {
+  transform: translateX(0);
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar-expanded {
+  transform: translateX(0);
+  transition: width 0.3s ease-in-out;
+}
+
+/* Sidebar item animations */
+.sidebar-item {
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar-item:hover {
+  transform: translateX(2px);
+}
+
+/* Tooltip animations */
+.tooltip-enter {
+  opacity: 0;
+  transform: scale(0.95) translateX(-5px);
+}
+
+.tooltip-enter-active {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  transition: all 0.15s ease-out;
+}
+
+/* Smooth collapse/expand animations */
+.sidebar-content {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.sidebar-content.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 1024px) {
+  .sidebar-toggle {
+    display: none !important;
+  }
+  
+  .sidebar-collapsed,
+  .sidebar-expanded {
+    width: 320px !important;
+  }
+}
+
+@layer components {
+  .glass-morphism {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .dark .glass-morphism {
+    background: rgba(15, 23, 42, 0.8);
+  }
+
+  .chat-message {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(207, 90%, 54%) 0%, hsl(161, 94%, 30%) 100%);
+  }
+
+  .gradient-secondary {
+    background: linear-gradient(135deg, hsl(161, 94%, 30%) 0%, hsl(38, 92%, 50%) 100%);
+  }
+
+  .chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+  }
+
+  .typing-indicator::after {
+    content: '|';
+    animation: blink 1s infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes blink {
+    0%, 50% {
+      opacity: 1;
+    }
+    51%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s infinite;
+  }
+}
+
+/* Custom scrollbar */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Professional data visualization styles */
+.chart-tooltip {
+  @apply bg-card border border-border rounded-lg shadow-lg p-3 text-sm;
+}
+
+.data-metric-card {
+  @apply bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 border border-border rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+.data-metric-value {
+  @apply text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+.data-metric-label {
+  @apply text-sm text-muted-foreground;
+}
+
+/* Professional button styles */
+.btn-primary {
+  @apply font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Markdown content styling */
+.prose h1 {
+  @apply text-xl font-bold mb-4 mt-6;
+}
+
+.prose h2 {
+  @apply text-lg font-bold mb-3 mt-5 border-b border-gray-200 pb-2;
+}
+
+.prose h3 {
+  @apply text-base font-semibold mb-2 mt-4;
+}
+
+.prose table {
+  @apply min-w-full border-collapse my-4;
+}
+
+.prose th {
+  @apply border border-gray-300 px-4 py-2 bg-gray-100 font-semibold text-left;
+}
+
+.prose td {
+  @apply border border-gray-300 px-4 py-2;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4 space-y-1;
+}
+
+.prose ol {
+  @apply list-decimal pl-6 mb-4 space-y-1;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose p {
+  @apply mb-3 leading-relaxed;
+}
+
+.prose strong {
+  @apply font-semibold;
+}
+
+.prose code {
+  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply bg-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary pl-4 italic my-4 text-muted-foreground;
+}
+
+.btn-secondary {
+  @apply font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md;
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  @apply border border-border hover:bg-muted text-foreground font-medium px-6 py-3 rounded-xl transition-all duration-200;
+}
+
+/* Navigation active state */
+.nav-link-active {
+  @apply text-primary border-b-2 border-primary;
+}
+
+.nav-link {
+  @apply text-muted-foreground hover:text-foreground transition-colors duration-200;
+}
+
+/* Card styles */
+.professional-card {
+  @apply bg-card border border-border rounded-2xl shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+.glass-card {
+  @apply backdrop-blur-md bg-white/80 dark:bg-slate-800/80 border rounded-2xl shadow-lg;
+}
+
+/* Form styles */
+.form-input {
+  @apply w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200;
+}
+
+.form-textarea {
+  @apply w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary resize-none transition-all duration-200;
+}
+
+/* Status indicators */
+.status-online {
+  @apply w-3 h-3 bg-secondary rounded-full animate-pulse;
+}
+
+.status-processing {
+  @apply w-3 h-3 bg-accent rounded-full animate-pulse;
+}
+
+.status-error {
+  @apply w-3 h-3 bg-destructive rounded-full;
+}
+
+/* Loading states */
+.loading-spinner {
+  @apply animate-spin rounded-full h-4 w-4 border-b-2 border-primary;
+}
+
+.skeleton {
+  @apply animate-pulse bg-muted rounded;
+}
+
+/* Responsive grid */
+.grid-responsive {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.grid-adaptive {
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-8;
+}
+
+/* Text styles */
+.heading-primary {
+  @apply text-4xl font-bold text-foreground mb-4;
+}
+
+.heading-secondary {
+  @apply text-xl text-muted-foreground;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+/* Animation delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
